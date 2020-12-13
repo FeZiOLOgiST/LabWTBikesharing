@@ -1,0 +1,33 @@
+<?by.epam.xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss} %-5p %c{1}:%l - %m%n"/>
+        </Console>
+        <File name="DaoLog" fileName="C:\\JAVA\\logs\\bikesharing\\dao.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p: %m%n"/>
+        </File>
+        <File name="MailLog" fileName="C:\\JAVA\\logs\\bikesharing\\mail.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p: %m%n"/>
+        </File>
+<!--        <RollingFile name="DaoLog"-->
+<!--                     fileName="C:\\JAVA\\logs\\bikesharing\\dao.log"-->
+<!--                     filePattern="logs/dao_%d{yyyy-MM-dd_HH-mm-ss}.log">-->
+<!--            <PatternLayout pattern="%d{HH:mm:ss} %-5p: %m%n" />-->
+<!--            <Policies>-->
+<!--                <OnStartupTriggeringPolicy />-->
+<!--            </Policies>-->
+<!--        </RollingFile>-->
+    </Appenders>
+    <Loggers>
+        <Logger name="DaoLog" level="debug">
+            <AppenderRef ref="DaoLog"/>
+        </Logger>
+        <Logger name="MailLog" level="debug">
+            <AppenderRef ref="MailLog"/>
+        </Logger>
+        <Root level="debug">
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+    </Loggers>
+</Configuration>
